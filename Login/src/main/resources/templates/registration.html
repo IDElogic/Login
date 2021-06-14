@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" layout:decorator="layouts/main">
+<head>
+<title>JavaSpringboot_Blog</title>
+</head>
+<body>
+
+	<div layout:fragment="loginContent">
+
+		<form name="registration" th:action="@{/reg}" th:object="${user}" method="post" class="form-signin">
+			<h2 class="form-signin-heading">Registrera dig</h2>
+		 	    <input type="text" id="email" name="username" th:field="*{email}" class="form-control" placeholder="E-postadress"  /> 
+			    <input type="password" id="password" name="password" th:field="*{password}"  class="form-control" placeholder="Lösenord" />
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrering</button>
+		</form>
+
+	</div>
+
+</body>
+</html>

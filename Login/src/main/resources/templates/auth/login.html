@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layouts/main">
+<head>
+<title>JavaSpringboot_Blog</title>
+</head>
+<body>
+
+	<div layout:fragment="loginContent">
+
+		<form name="login" th:action="@{/login}" method="post" class="form-signin">
+			<h2 class="form-signin-heading">Registrera dig</h2>
+			<div id="err" th:if="${param.error}" class="alert alert-danger">Ogiltigt användarnamn och lösenord</div>
+			<div th:if="${param.logout}" class="alert alert-success">Du har loggat ut</div>
+			<label for="username" class="sr-only">Användarnamn</label> 
+			    <input type="text" id="username" name="username" class="form-control" placeholder="Användarnamn" required="true" /> 
+			<label for="password" class="sr-only">Lösenord</label> 
+			    <input type="password" id="password" name="password" class="form-control" placeholder="Lösenord" required="true" />
+			<div class="checkbox">
+				<label> <input id="remember-me" name="remember-me" type="checkbox" /> Kom ihåg mig
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
+		</form>
+
+      <a href="/registration">Jag skulle vilja registrera mig</a>
+	</div>
+
+</body>
+</html>
